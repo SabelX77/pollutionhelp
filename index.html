@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pollution Awareness App</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1> Pollution Awareness</h1>
+
+<p>
+Together we can make our Earth cleaner, greener and healthier.
+</p>
+
+<a href="#aqi">
+<button class="hero-btn">
+Check Air Quality
+</button>
+</a>
+
+</div>
+
+</header>
+
+<!-- ================= AQI ================= -->
+
+<section id="aqi" class="aqi-section">
+
+<h2> Air Quality Index Checker</h2>
+
+<p>
+Enter your area's AQI value to know the pollution level.
+</p>
+
+<div class="aqi-card">
+
+<input
+type="number"
+id="aqiInput"
+placeholder="Enter AQI">
+
+<button onclick="checkAQI()">
+
+Check AQI
+
+</button>
+
+<div id="aqiResult" class="aqi-result">
+
+Your result appears here
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TRACKER ================= -->
+
+<section class="tracker-section">
+
+<div class="tracker">
+
+<h2> Eco Habit Tracker</h2>
+
+<p>Select today's eco-friendly habits.</p>
+
+<div class="habit-buttons">
+
+<button onclick="addAction('Used Public Transport')">
+ Public Transport
+</button>
+
+<button onclick="addAction('Avoided Plastic')">
+ Avoided Plastic
+</button>
+
+<button onclick="addAction('Saved Electricity')">
+ Saved Electricity
+</button>
+
+<button onclick="addAction('Planted a Tree')">
+Planted Tree
+</button>
+
+</div>
+
+<input
+type="text"
+id="customAction"
+placeholder="Write your own eco habit">
+
+<button onclick="addCustomAction()">
+
+Add Habit
+
+</button>
+
+<h3>
+
+Eco Score
+
+</h3>
+
+<div class="score-box">
+
+<span id="score">
+
+0
+
+</span>
+
+Points
+
+</div>
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-bar">
+
+</div>
+
+</div>
+
+<button class="reset-btn"
+onclick="resetTracker()">
+
+Reset Tracker
+
+</button>
+
+<h3>
+
+Today's Activities
+
+</h3>
+
+<ul id="actionList">
+
+</ul>
+
+</div>
+
+<!-- IMAGE -->
+
+<div class="tracker-image">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700" alt="Nature">
+
+</div>
+
+</section>
+
+<!-- ================= AI MODEL ================= -->
+
+
+<section class="ai-section">
+
+    <div class="ai-box">
+
+        <h2> AI Waste Detector Model</h2>
+
+        <p>
+            Click the button below to open our AI Waste Detector Model built using
+            Google Teachable Machine.
+        </p>
+
+        <div class="upload-box">
+            <a href="https://teachablemachine.withgoogle.com/models/Z5fngIEZf/" target="_blank">
+                <button class="model-btn">
+                     Open AI Waste Detector
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TIPS ================= -->
+<section class="tips">
+
+<h2>
+
+Daily Eco Tip
+
+</h2>
+
+<p id="tip">
+
+Click below to receive a random eco-friendly tip.
+
+</p>
+
+<button onclick="newTip()">
+
+Generate Tip
+
+</button>
+
+</section>
+
+<footer>
+
+ Small changes today create a greener tomorrow.
+
+</footer>
+
+<!-- TensorFlow -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+<script src="script.js"></script>
+
+<!-- Dialogflow Messenger -->
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+    intent="WELCOME"
+    chat-title="POLY"
+    agent-id="fd20191b-3153-407c-87e1-7d6c9304bfe5"
+    language-code="en">
+</df-messenger>
+
+</body>
+
+</html>
